@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import 'skeletons.scss';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.wrapper {
+    position: relative;
+    width: 400px;
+    min-height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex; 
+    flex-direction: column; 
+}
+.wrapper .icon-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #10bcc2;
+}
+.wrapper .form-box {
+    position: relative; 
+    top: 0;
+    width: 100%;
+    transition: 0.5s;
+    flex: 1; 
+    display: flex; 
+    flex-direction: column;
+}
+.wrapper .form-box h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #10bcc2;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.wrapper .input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+.wrapper .input-box .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color:#19ecb7;
+}
+.wrapper .input-box input {
+    width: 100%;
+    padding: 10px 10px 10px 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    outline: none;
+    color: #10bcc2;
+    font-size: 16px;
+    border-radius: 30px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.wrapper .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    color: #19ecb7;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.wrapper .input-box input:focus ~ label,
+.wrapper .input-box input:valid ~ label {
+    top: -10px;
+    left: 30px;
+    font-size: 12px;
+    color: #03a9f4;
+}
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: #10bcc2;
+}
+.wrapper .remember-forgot label input {
+    margin-right: 5px;
+}
+.wrapper .remember-forgot a {
+    color: #000;
+    text-decoration: none;
+}
+.wrapper .btn {
+    width: 100%;
+    background: #03a9f4;
+    border: none;
+    padding: 8px;
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.wrapper .btn:hover {
+    background: #0288d1;
+}
+.wrapper .login-register {
+    text-align: center;
+    color: black;
+}
+.wrapper .login-register p {
+    font-size: 16px;
+}
+.wrapper .login-register a {
+    color: #03a9f4;
+    text-decoration: none;
+}
+.wrapper .login-register a:hover {
+    text-decoration: underline;
+}
+.wrapper .form-box.register {
+    display: none;
+}
+
+.wrapper.welcome {
+    animation: welcomeAnimation 1s ease-in-out;
+}
+
+@keyframes welcomeAnimation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
